@@ -29,7 +29,6 @@ public class LibrosController : Controller
             }
 
         };
-        ViewBag.Nombre = "Kevin Pérez";
         ViewBag.Libros = libros;
         return View();
     }

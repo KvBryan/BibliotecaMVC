@@ -1,1 +1,39 @@
-<h1>Autores</h1>
+@using BibliotecaMVC.Models
+@{
+    List<Autor> autores = ViewBag.Autores;
+}
+<h2>Catálogo de Autores</h2>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Nacionalidad</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var Autor in autores)
+        {
+            <tr>
+                <td>@Autor.ID</td>
+                <td>@Autor.Nombre</td>
+                <td>@Autor.Apellido</td>
+                <td>@Autor.Nacionalidad</td>
+                <td>@Autor.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                <td>
+                    @if (Autor.Activo)
+                    {
+                        <span class="badge bg-success">Activo</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Inactivo</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
