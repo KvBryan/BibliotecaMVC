@@ -1,3 +1,4 @@
+@*
 @using BibliotecaMVC.Models
 @{
     List<Autor> autores = ViewBag.Autores;
@@ -37,3 +38,50 @@
         }
     </tbody>
 </table>
+*@
+
+@model IEnumerable<BibliotecaMVC.Models.Autor>
+@{
+    ViewData["Title"] = "Listado de Autores";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>Hay @Model.Count() Autores Registrados</p>
+<a class="btn btn-primary" asp-action="Create">Nuevo Autor +</a>
+<p></p>
+<div class="row">
+    @foreach (var autor in Model)
+    {
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5>@autor.Nombre</h5>
+                    <h5>@autor.Apellido</h5>
+                    <h6>@autor.Nacionalidad</h6>
+                    <p>Edad: @(DateTime.Now.Year - autor.FechaNacimiento.Year)</p>
+                    <a asp-action="Details" asp-route-id="@autor.ID" class="btn btn-sm btn-info">Ver</a>
+                    <a asp-action="Edit" asp-route-id="@autor.ID" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@autor.ID" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de eliminar este autor?');">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,39 +1,41 @@
-@using BibliotecaMVC.Models
+@model IEnumerable<BibliotecaMVC.Models.Libro>
 @{
-    List<Libro> libros = ViewBag.Libros;
+    ViewData["Title"] = "Listado de Libros";
 }
-<h2>Catálogo de Libros</h2>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Titulo</th>
-        <th>Autor</th>
-        <th>Categoria</th>
-        <th>Precio</th>
-        <th>Estado</th>
-    </tr>
-    </thead>
-    <tbody>
-        @foreach (var Libro in libros)
-        {
-            <tr>
-                <td>@Libro.ID</td>
-                <td>@Libro.Titulo</td>
-                <td>@Libro.Autor</td>
-                <td>@Libro.Categoria</td>
-                <td>$@Libro.Precio</td>
-                <td>
-                    @if (@Libro.Disponible)
-                    {
-                        <span class="badge bg-success">Disponible</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-danger">Prestado</span>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<h1>@ViewData["Title"]</h1>
+<p>Hay @Model.Count() Libros Registrados</p>
+<a class="btn btn-primary" asp-action="Create">Nuevo Libro +</a>
+<p></p>
+<div class="row">
+    @foreach (var libro in Model)
+    {
+        <div class="col-md-6 col-lg-4">
+            <div class="card mb-3">
+                @if (!string.IsNullOrEmpty(libro.Imagen))
+                {
+                    <img src="~/images/@libro.Imagen" class="card-img-top" alt="@libro.Titulo" style="height: 250px; object-fit: cover;" />
+                }
+                <div class="card-body">
+                    <h5>@libro.Titulo</h5>
+                    <h6>@libro.Autor</h6>
+                    <p class="text-muted">Categoría: @libro.Categoria</p>
+                    <p>Precio: $@libro.Precio.ToString("F2")</p>
+                    <p>
+                        @if (libro.Disponible)
+                        {
+                            <span class="badge bg-success">Disponible</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Prestado</span>
+                        }
+                    </p>
+                    <a asp-action="Details" asp-route-id="@libro.ID" class="btn btn-sm btn-info">Ver</a>
+                    <a asp-action="Edit" asp-route-id="@libro.ID" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@libro.ID" class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro de eliminar este libro?');">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
