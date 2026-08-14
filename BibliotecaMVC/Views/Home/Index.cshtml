@@ -1,8 +1,112 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1>Sistema de Gestión de Biblioteca</h1>
-    <p>Bienvenido al Sistema desarrollado con ASP.NET CORE MVC</p>
+<div class="container mt-5">
+    <div class="row align-items-center g-5">
+        <div class="col-md-6">
+            <h1 class="display-4 fw-bold text-primary">BibliotecaMVC</h1>
+            <p class="lead text-white-50">Bienvenido a nuestro sistema web de biblioteca</p>
+            <a asp-controller="Home" asp-action="About" class="btn btn-primary btn-lg">Conocer Más</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="https://picsum.photos/500/350" class="img-fluid rounded shadow border border-secondary" alt="Biblioteca"/>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-primary">Accesos Rápidos</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-light">Libros <span class="badge bg-secondary fs-6">Catálogo</span></h3>
+                    <p class="card-text text-white-50">Consulta y administración del catálogo de libros.</p>
+                    <a asp-controller="Libros" asp-action="Index" class="btn btn-primary w-100">Ver Libros</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-light">Autores <span class="badge bg-secondary fs-6">Directorio</span></h3>
+                    <p class="card-text text-white-50">Consulta y administración de autores y nacionalidades.</p>
+                    <a asp-controller="Autores" asp-action="Index" class="btn btn-primary w-100">Ver Autores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-light">Préstamos <span class="badge bg-secondary fs-6">Gestión</span></h3>
+                    <p class="card-text text-white-50">Gestión de préstamos y disponibilidad de libros.</p>
+                    <a asp-controller="Prestamos" asp-action="Index" class="btn btn-primary w-100">Ver Préstamos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 pt-4">
+    <h2 class="text-center mb-4 text-primary">Servicios de la biblioteca</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
+                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 1">
+                <div class="card-body">
+                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+        </div>
+        <!--Servicio 2-->
+        <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
+                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 2">
+                <div class="card-body">
+                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+        </div>
+        <!--Servicio 3-->
+        <div class="col-md-4">
+            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
+                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 3">
+                <div class="card-body">
+                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 py-4">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
+                <h2 class="text-primary fw-bold">500+</h2>
+                <p class="mb-0 text-white-50">Libros disponibles</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
+                <h2 class="text-primary fw-bold">120+</h2>
+                <p class="mb-0 text-white-50">Autores Registrados</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
+                <h2 class="text-primary fw-bold">25+</h2>
+                <p class="mb-0 text-white-50">Categorías Literarias</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="bg-primary text-white rounded-3 p-5 text-center shadow">
+        <h2 class="fw-bold">Explora nuestra biblioteca virtual</h2>
+        <p class="lead mb-4 text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content</p>
+        <a asp-controller="Home" asp-action="About" class="btn btn-outline-light btn-lg px-4">Acerca de la biblioteca</a>
+    </div>
 </div>

@@ -19,6 +19,12 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+p, figcaption {
+  color: #abb2bf;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -28,4 +34,64 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+
+/*=============================
+    VARIABLES
+===============================*/
+:root{
+  --color-principal: #0d6efd;
+  --color-secundario: #2c3034;
+  --color-texto: #f8f9fa;
+  --color-blanco: #ffffff;
+}
+
+.about-header{
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+}
+.about-container{
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+.about-content{
+  flex: 3;
+  background: var(--color-secundario);
+  color: var(--color-texto);
+  padding: 20px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.about-content:hover{
+  transform: translateY(-5px);
+}
+.about-info{
+  flex: 1;
+  background: #343a40;
+  color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+.team-section{
+  padding: 20px 0;
+}
+.team-section img {
+  width: 100%;
+  border-radius: 8px;
+}
+.team-section figcaption{
+  text-align: center;
+  margin-top: 10px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .about-container{
+    flex-direction: column;
+  }
 }
