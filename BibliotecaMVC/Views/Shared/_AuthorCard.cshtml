@@ -1,0 +1,10 @@
+@model BibliotecaMVC.Models.AuthorCard
+
+<div class="author-card">
+    <img src="@Model.ImageUrl" class="author-img" alt="@Model.Name" />
+    <div class="author-info-body">
+        <h4 class="author-name">@Model.Name</h4>
+        <span class="author-role">@Model.Role</span>
+        <p class="author-bio">@Model.Bio</p>
+    </div>
+</div>

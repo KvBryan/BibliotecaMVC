@@ -2,111 +2,115 @@
     ViewData["Title"] = "Inicio";
 }
 
+<!-- ACTIVIDAD 1: Hero Section con Flexbox -->
+<div class="hero-flex-container">
+    <div class="hero-content-flex">
+        <h1 class="display-4 fw-bold text-primary">BibliotecaMVC</h1>
+        <p class="lead text-white-50">Tu portal digital de acceso al conocimiento, literatura y gestión de recursos bibliotecarios en tiempo real.</p>
+        <a asp-controller="Home" asp-action="About" class="btn btn-primary btn-lg mt-2">Conocer Más</a>
+    </div>
+    <div class="hero-image-flex">
+        <img src="https://picsum.photos/500/350" alt="Biblioteca Virtual"/>
+    </div>
+</div>
+
+<!-- ACTIVIDAD 1: Sección de Accesos Rápidos con Flexbox -->
 <div class="container mt-5">
-    <div class="row align-items-center g-5">
-        <div class="col-md-6">
-            <h1 class="display-4 fw-bold text-primary">BibliotecaMVC</h1>
-            <p class="lead text-white-50">Bienvenido a nuestro sistema web de biblioteca</p>
-            <a asp-controller="Home" asp-action="About" class="btn btn-primary btn-lg">Conocer Más</a>
+    <h2 class="quick-access-title text-primary">Accesos Rápidos</h2>
+    <div class="quick-access-flex-container">
+        <div class="quick-access-card">
+            <div>
+                <h3>Libros <span class="badge bg-secondary fs-6">Catálogo</span></h3>
+                <p class="text-white-50">Explora nuestro catálogo completo de libros, realiza búsquedas por título, autor o categoría y consulta su disponibilidad.</p>
+            </div>
+            <a asp-controller="Libros" asp-action="Index" class="btn btn-primary w-100">Ver Libros</a>
         </div>
-        <div class="col-md-6 text-center">
-            <img src="https://picsum.photos/500/350" class="img-fluid rounded shadow border border-secondary" alt="Biblioteca"/>
+        <div class="quick-access-card">
+            <div>
+                <h3>Autores <span class="badge bg-secondary fs-6">Directorio</span></h3>
+                <p class="text-white-50">Conoce a los escritores detrás de las grandes obras literarias de nuestro catálogo y filtra por su nacionalidad.</p>
+            </div>
+            <a asp-controller="Autores" asp-action="Index" class="btn btn-primary w-100">Ver Autores</a>
+        </div>
+        <div class="quick-access-card">
+            <div>
+                <h3>Préstamos <span class="badge bg-secondary fs-6">Gestión</span></h3>
+                <p class="text-white-50">Gestiona de manera eficiente las solicitudes, fechas de entrega y devoluciones de los libros en tiempo real.</p>
+            </div>
+            <a asp-controller="Prestamos" asp-action="Index" class="btn btn-primary w-100">Ver Préstamos</a>
         </div>
     </div>
 </div>
 
+<!-- ACTIVIDAD 2: Sección con CSS Grid (Libros Destacados) -->
 <div class="container mt-5">
-    <h2 class="text-center mb-4 text-primary">Accesos Rápidos</h2>
-    <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-light">Libros <span class="badge bg-secondary fs-6">Catálogo</span></h3>
-                    <p class="card-text text-white-50">Consulta y administración del catálogo de libros.</p>
-                    <a asp-controller="Libros" asp-action="Index" class="btn btn-primary w-100">Ver Libros</a>
+    <h2 class="grid-section-title text-primary">Libros Destacados</h2>
+    <div class="books-grid-container">
+        <!-- Libro 1 -->
+        <div class="book-card-item">
+            <img src="https://picsum.photos/300/400?random=1" class="book-card-img" alt="Clean Code" />
+            <div class="book-card-body">
+                <h4 class="book-card-title">Clean Code</h4>
+                <span class="book-card-author">Robert C. Martin</span>
+                <p class="book-card-desc">Un manual clásico para escribir código limpio, legible y mantenible, lleno de mejores prácticas y casos reales de refactorización.</p>
+                <div class="book-card-footer">
+                    <span class="book-card-tag">Programación</span>
+                    <span class="book-card-price">$35.50</span>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-light">Autores <span class="badge bg-secondary fs-6">Directorio</span></h3>
-                    <p class="card-text text-white-50">Consulta y administración de autores y nacionalidades.</p>
-                    <a asp-controller="Autores" asp-action="Index" class="btn btn-primary w-100">Ver Autores</a>
+        <!-- Libro 2 -->
+        <div class="book-card-item">
+            <img src="https://picsum.photos/300/400?random=2" class="book-card-img" alt="Cien años de soledad" />
+            <div class="book-card-body">
+                <h4 class="book-card-title">Cien años de soledad</h4>
+                <span class="book-card-author">Gabriel García Márquez</span>
+                <p class="book-card-desc">La obra cumbre de la literatura hispanoamericana que narra la historia de la familia Buendía a lo largo de varias generaciones en el mítico pueblo de Macondo.</p>
+                <div class="book-card-footer">
+                    <span class="book-card-tag">Literatura</span>
+                    <span class="book-card-price">$18.00</span>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card bg-dark text-light border-secondary text-center shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title text-light">Préstamos <span class="badge bg-secondary fs-6">Gestión</span></h3>
-                    <p class="card-text text-white-50">Gestión de préstamos y disponibilidad de libros.</p>
-                    <a asp-controller="Prestamos" asp-action="Index" class="btn btn-primary w-100">Ver Préstamos</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-5 pt-4">
-    <h2 class="text-center mb-4 text-primary">Servicios de la biblioteca</h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
-                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 1">
-                <div class="card-body">
-                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
-            </div>
-        </div>
-        <!--Servicio 2-->
-        <div class="col-md-4">
-            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
-                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 2">
-                <div class="card-body">
-                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                </div>
-            </div>
-        </div>
-        <!--Servicio 3-->
-        <div class="col-md-4">
-            <div class="card h-100 bg-dark text-light border-secondary shadow-sm">
-                <img src="https://picsum.photos/200/100" class="card-img-top border-bottom border-secondary" alt="Servicio 3">
-                <div class="card-body">
-                    <p class="card-text text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+        <!-- Libro 3 -->
+        <div class="book-card-item">
+            <img src="https://picsum.photos/300/400?random=3" class="book-card-img" alt="El principito" />
+            <div class="book-card-body">
+                <h4 class="book-card-title">El Principito</h4>
+                <span class="book-card-author">Antoine de Saint-Exupéry</span>
+                <p class="book-card-desc">Un viaje filosófico y humanista a través de las conversaciones de un pequeño príncipe con diversos personajes en planetas extraños.</p>
+                <div class="book-card-footer">
+                    <span class="book-card-tag">Infantil / Filosofía</span>
+                    <span class="book-card-price">$9.50</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- ACTIVIDAD 1 y 3: Estadísticas utilizando Flexbox adaptable -->
 <div class="container mt-5 py-4">
-    <div class="row g-4 text-center">
-        <div class="col-md-4">
-            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
-                <h2 class="text-primary fw-bold">500+</h2>
-                <p class="mb-0 text-white-50">Libros disponibles</p>
-            </div>
+    <div class="stats-flex-container">
+        <div class="stat-card-item">
+            <div class="stat-number">500+</div>
+            <p class="stat-label">Libros disponibles</p>
         </div>
-        <div class="col-md-4">
-            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
-                <h2 class="text-primary fw-bold">120+</h2>
-                <p class="mb-0 text-white-50">Autores Registrados</p>
-            </div>
+        <div class="stat-card-item">
+            <div class="stat-number">120+</div>
+            <p class="stat-label">Autores Registrados</p>
         </div>
-        <div class="col-md-4">
-            <div class="p-4 bg-dark border border-secondary rounded shadow-sm">
-                <h2 class="text-primary fw-bold">25+</h2>
-                <p class="mb-0 text-white-50">Categorías Literarias</p>
-            </div>
+        <div class="stat-card-item">
+            <div class="stat-number">25+</div>
+            <p class="stat-label">Categorías Literarias</p>
         </div>
     </div>
 </div>
 
-<div class="container mt-5 mb-5">
+<!-- Banner inferior -->
+<div class="container mt-4 mb-5">
     <div class="bg-primary text-white rounded-3 p-5 text-center shadow">
         <h2 class="fw-bold">Explora nuestra biblioteca virtual</h2>
-        <p class="lead mb-4 text-white-50">Some quick example text to build on the card title and make up the bulk of the card’s content</p>
+        <p class="lead mb-4 text-white-50">Únete a nuestra comunidad de lectores y accede a un sinfín de conocimientos y recursos desde cualquier lugar.</p>
         <a asp-controller="Home" asp-action="About" class="btn btn-outline-light btn-lg px-4">Acerca de la biblioteca</a>
     </div>
 </div>

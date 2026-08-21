@@ -1,6 +1,10 @@
+@{
+    ViewData["Title"] = "Acerca De";
+}
+
 <header class="about-header mb-4">
     <h1>BibliotecaMVC</h1>
-    <p>Una solución web para la administración y consulta del catálogo de nuestra biblioteca.</p>
+    <p>Una solución web moderna para la administración y consulta de nuestro catálogo bibliotecario.</p>
 </header>
 
 <section class="about-container">
@@ -25,7 +29,62 @@
     </aside>
 </section>
 
-<section class="team-section">
+<!-- ACTIVIDAD 4: Componente Reutilizable 1 (Características del Sistema) renderizado con CSS Grid -->
+<section class="mt-5">
+    <h2 class="text-center text-primary mb-4">Características del Sistema</h2>
+    <div class="features-grid-container">
+        @await Html.PartialAsync("_FeatureCard", new FeatureCard 
+        { 
+            Title = "Catálogo Completo", 
+            Description = "Búsqueda y consulta ágil de todos los libros por categorías, autores y disponibilidad en tiempo real." 
+        })
+        @await Html.PartialAsync("_FeatureCard", new FeatureCard 
+        { 
+            Title = "Préstamos Ágiles", 
+            Description = "Gestión simplificada de entregas, vencimientos y retornos para mantener un control constante." 
+        })
+        @await Html.PartialAsync("_FeatureCard", new FeatureCard 
+        { 
+            Title = "Usuarios Registrados", 
+            Description = "Administración centralizada de lectores y perfiles para un servicio personalizado y eficiente." 
+        })
+        @await Html.PartialAsync("_FeatureCard", new FeatureCard 
+        { 
+            Title = "Interfaz Responsiva", 
+            Description = "Accede a la plataforma de manera impecable desde cualquier computadora, tableta o dispositivo móvil." 
+        })
+    </div>
+</section>
+
+<!-- ACTIVIDAD 4: Componente Reutilizable 2 (Autores Destacados) renderizado con CSS Grid -->
+<section class="mt-5">
+    <h2 class="text-center text-primary mb-4">Autores Destacados de la Semana</h2>
+    <div class="authors-grid-container">
+        @await Html.PartialAsync("_AuthorCard", new AuthorCard 
+        { 
+            Name = "Gabriel García Márquez", 
+            Role = "Escritor Clásico", 
+            ImageUrl = "https://picsum.photos/400/300?random=11", 
+            Bio = "Premio Nobel de Literatura (1982) y uno de los mayores exponentes del realismo mágico mundial, autor de obras inmortales." 
+        })
+        @await Html.PartialAsync("_AuthorCard", new AuthorCard 
+        { 
+            Name = "Isabel Allende", 
+            Role = "Escritora Contemporánea", 
+            ImageUrl = "https://picsum.photos/400/300?random=12", 
+            Bio = "Reconocida autora chilena cuyas obras combinan amor, historia y fantasía, siendo traducida a más de 40 idiomas." 
+        })
+        @await Html.PartialAsync("_AuthorCard", new AuthorCard 
+        { 
+            Name = "Claudia Lars", 
+            Role = "Poetisa Destacada", 
+            ImageUrl = "https://picsum.photos/400/300?random=13", 
+            Bio = "Una de las voces líricas más sobresalientes de El Salvador y Centroamérica del siglo XX, creadora de 'Tierra de Infancia'." 
+        })
+    </div>
+</section>
+
+<section class="team-section mt-5">
     <figure>
         <img src="https://picsum.photos/900/350" alt="Biblioteca"/>
         <figcaption>Biblioteca virtual desarrollada con ASP.NET Core MVC</figcaption>
